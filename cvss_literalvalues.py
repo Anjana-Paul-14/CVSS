@@ -58,7 +58,6 @@ def calculate_cvss_score(impact, exploitability, temporalscore, environmentalsco
 
 #impact = "remote"
 #exploitability = "local"
-#temporal_score_modifier = 1.0
-#environmental_score_modifier = 0.85
+
 
 print(calculate_cvss_score(impact, exploitability, temporalscoremodifier, environmentalscore))
