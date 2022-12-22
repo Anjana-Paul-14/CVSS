@@ -60,4 +60,4 @@ def calculate_cvss_score(impact, exploitability, temporalscore, environmentalsco
 #exploitability = "local"
 
 
-print(calculate_cvss_score(impact, exploitability, temporalscoremodifier, environmentalscore))
+print(calculate_cvss_score(impact, exploitability, temporalscore, environmentalscore))
