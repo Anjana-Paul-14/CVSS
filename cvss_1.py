@@ -11,18 +11,18 @@ def calculate_cvss_score(base_score):
   return base_score, severity
 
 value_mapping = {
-  "Network": 0.85,
-  "Adjacent": 0.62,
-  "Local": 0.55,
-  "Physical": 0.2,
-  "Low": 0.5,
-  "Medium": 1.0,
-  "High": 1.5,
-  "None": 0.0,
-  "Partial": 0.275,
-  "Complete": 0.66,
-  "Single": 1.0,
-  "Multiple": 1.5,
+  "network": 0.85,
+  "adjacent": 0.62,
+  "local": 0.55,
+  "physical": 0.2,
+  "low": 0.5,
+  "medium": 1.0,
+  "high": 1.5,
+  "none": 0.0,
+  "partial": 0.275,
+  "complete": 0.66,
+  "single": 1.0,
+  "multiple": 1.5,
 }
 
 
