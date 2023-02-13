@@ -53,7 +53,7 @@ def index ():
 
       cvss_score, severity = calculate_cvss_score(base_score)
 
-      return render_template("cvss_1.html", cvss_score=cvss_score, severity=severity)
+      return render_template("result.html", cvss_score=cvss_score, severity=severity)
    return render_template("cvss_1.html")
 
   
