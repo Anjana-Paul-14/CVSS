@@ -20,21 +20,22 @@ value_mapping = {
 def calculate_cvss_score(base_score):
  
   if base_score >= 9.0:
-    severity = "Critical"
+    severity = "critical"
   elif base_score >= 7.0:
-    severity = "High"
+    severity = "high"
   elif base_score >= 4.0:
-    severity = "Medium"
+    severity = "medium"
   else:
-    severity = "Low"
+    severity = "low"
   return base_score, severity
 
 @app.route('/',methods=['POST','GET'])
 
 def cvss():
    # return ("hello")
-   if request.method=='POST': 
 
+   if request.method=='POST': 
+   
       access_vector = request.form["access_vector"]
       access_complexity = request.form["access_complexity"]
       authentication = request.form["authentication"]
@@ -48,7 +49,30 @@ def cvss():
       confidentiality_impact_value = value_mapping[confidentiality_impact]
       integrity_impact_value = value_mapping[integrity_impact]
       availability_impact_value = value_mapping[availability_impact]
- 
+
+
+      # access_vector = float(value_mapping[request.form["access_vector"]])
+      # access_complexity = float(value_mapping[request.form["access_complexity"]])
+      # authentication = float(value_mapping[request.form["authentication"]])
+      # confidentiality_impact = float(value_mapping[request.form["confidentiality_impact"]])
+      # integrity_impact = float(value_mapping[request.form["integrity_impact"]])
+      # availability_impact = float(value_mapping[request.form["availability_impact"]])
+      
+      # access_vector = value_mapping[request.form["access_vector"]]
+      # access_complexity = value_mapping[request.form["access_complexity"]]
+      # authentication = value_mapping[request.form["authentication"]]
+      # confidentiality_impact = value_mapping[request.form["confidentiality_impact"]]
+      # integrity_impact = value_mapping[request.form["integrity_impact"]]
+      # availability_impact = value_mapping[request.form["availability_impact"]]
+
+      # access_vector_value = float(value_mapping[access_vector])
+      # access_complexity_value = float(value_mapping[access_complexity])
+      # authentication_value = float(value_mapping[authentication])
+      # confidentiality_impact_value = float(value_mapping[confidentiality_impact])
+      # integrity_impact_value = float(value_mapping[integrity_impact])
+      # availability_impact_value = float(value_mapping[availability_impact])
+      
+      
       base_score = 10 * (confidentiality_impact_value + integrity_impact_value + availability_impact_value) * access_complexity_value
       base_score = base_score * access_vector_value * authentication_value
 
